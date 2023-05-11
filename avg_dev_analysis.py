@@ -243,7 +243,7 @@ def perform_regression_analysis(input_path):
 	# adj_rating is the grade of the climb, tick_file is the name of the climber, crag is the climbing area,
 	# Style is whether they led or followed the climb, lead style is whether they
 	# onsighted, redpointed, pinkpointed, etc.
-	# I can't push this much past 150k on my local machine. even if i could parallelize that'd be huge
+	# I can't push this much past 200k on my local machine. even if i could parallelize that'd be huge
 	lsdv_model = smf.ols(formula="adj_rating~tick_file + crag + Style + lead_style",
 			data=df_regression_final[:200000])
 	lsdv_model_results = lsdv_model.fit()
